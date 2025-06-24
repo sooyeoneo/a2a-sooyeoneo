@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>에이아이코리아 기업 정보</title>
+    <style>
+        body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            font-family: "Noto Sans KR", sans-serif;
+            color: #3b3b3b;
+            background-color: #e1e1e1;
+        }
+
+        header {
+            border-bottom: 1px solid #3b3b3b;
+        }
+
+        header .report-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 20px;
+        }
+
+        .company-title h1 {
+            margin-bottom: 5px;
+        }
+
+        main {
+            /* A2A 이미지 속성 */
+            background-image: url("https://web-portfolio-files.s3.ap-northeast-2.amazonaws.com/a2a-logo.png");
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            background-size: 400px auto;
+        }
+
+        section {
+            border-bottom: 1px solid #3b3b3b;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: baseline;
+            gap: 30px;
+            border-bottom: solid #d9d9d9;
+        }
+
+        .info-item h3 {
+            min-width: 150px;
+            font-size: 15px;
+            color: #3b3b3b;
+            font-weight: 600;
+        }
+
+        .info-item p, .info-item ul {
+            color: #595858;
+            font-size: 15px;
+        }
+
+        .double-item {
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+        }
+
+        .inline-pair {
+            display: flex;
+            align-items: baseline;
+            gap: 30px;
+        }
+
+        .highlight {
+            color: #4708dc;
+            font-weight: bold;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        .half-flex {
+            flex: 1;
+        }
+
+        /* ▼▼▼ PDF 페이지 나눔 방지 스타일 추가 ▼▼▼ */
+        @media print {
+            section, .info-item {
+                page-break-inside: avoid;
+            }
+
+            header, main, section {
+                /* 페이지 나눔 시 경계선이 잘리는 것을 방지 */
+                border-bottom: none;
+            }
+
+            /* 리포트 전체에 테두리를 주어 깔끔하게 보이도록 설정 */
+            body {
+                border: 1px solid #d9d9d9;
+            }
+        }
+
+        /* ▲▲▲ PDF 페이지 나눔 방지 스타일 추가 ▲▲▲ */
+
+    </style>
+</head>
+
+<body>
+<header class="header">
+    <div class="company-title">
+        <p class="report-header">
+            <img src="https://web-portfolio-files.s3.ap-northeast-2.amazonaws.com/peak-logo.png" alt="logo"
+                 class="logo-small"/>
+            기업 분석 리포트
+        </p>
+        <h1>에이아이코리아</h1>
+        <p>
+            
+            인공지능, 헬스케어, 데이터 분석
+            
+        </p>
+    </div>
+</header>
+
+<main>
+    <section class="section-basic-info">
+        <div>
+            <div class="info-item">
+                <h3>주요 산업 키워드</h3>
+                <p>
+                    
+                    인공지능, 헬스케어, 데이터 분석
+                    
+                </p>
+            </div>
+            <div class="info-item">
+                <h3>회사 주소/위치</h3>
+                <p>서울특별시 강남구 테헤란로 123</p>
+            </div>
+            <div class="double-item info-item">
+                <div class="inline-pair">
+                    <h3>대표자</h3>
+                    <p>홍길동</p>
+                </div>
+                <div class="inline-pair">
+                    <h3>설립일</h3>
+                    <p style="min-width: 100px">2017-06-15</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <h3>기업 요약</h3>
+                <p>AI 기반 헬스케어 솔루션 제공 기업</p>
+            </div>
+            <div class="info-item">
+                <h3>타겟 고객군</h3>
+                <p>
+                    
+                    병원, 의료기기 기업, 정부기관
+                    
+                </p>
+            </div>
+            <div class="info-item">
+                <h3>재무 상태</h3>
+                <div>
+                    
+                    <ul>
+                        
+                        <li>2023 : 12억원</li>
+                        
+                        <li>2022 : 9억원</li>
+                        
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="info-item">
+                <h3>최신 동향</h3>
+                <p>
+                    
+                    AI 진단 정확도 98% 달성, 글로벌 진출 발표
+                    
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-business">
+        <div class="double-item info-item">
+            <div class="half-flex">
+                <h3>경쟁사</h3>
+                
+                <ul>
+                    
+                    <li>메디AI</li>
+                    
+                    <li>닥터봇</li>
+                    
+                </ul>
+                
+            </div>
+            <div class="half-flex">
+                <h3>주요 경쟁 분야</h3>
+                
+                <ul>
+                    
+                    <li>진단 보조</li>
+                    
+                    <li>의료 상담</li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section-strength info-item">
+        <h3>강점 및 차별점</h3>
+        <div>
+            
+            <ul>
+                
+                <li>정확도 높은 진단 알고리즘</li>
+                
+                <li>풍부한 의료 데이터</li>
+                
+                <li>전문가 집단 보유</li>
+                
+            </ul>
+            
+        </div>
+    </section>
+
+    <section class="section-sales">
+        <div class="info-item">
+            <h3>리스크 요인</h3>
+            <div class="text-bold">
+                
+                <ul>
+                    
+                    <li>의료법 개정 리스크</li>
+                    
+                    <li>AI 윤리 이슈</li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="info-item">
+            <h3>참고 링크</h3>
+            <div>
+                
+                <ul>
+                    
+                    <li>
+                        <a href="https://example.com/news1" target="_blank">AI로 암 조기 진단 성공</a>
+                    </li>
+                    
+                    <li>
+                        <a href="https://example.com/news2" target="_blank">에이아이코리아, 미국 시장 진출</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </section>
+    <div class="border-line"></div>
+</main>
+</body>
+
+</html>
