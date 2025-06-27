@@ -57,7 +57,7 @@ class TextSplitter:
         paragraphs = [p.strip() for p in paragraphs if p.strip()]
         return paragraphs
     
-    def split_by_tokens(self, text: str, chunk_size: int = None) -> List[str]:
+    def split_by_tokens(self, text: str, chunk_size: Optional[int] = None) -> List[str]:
         """
         토큰 수 기준으로 텍스트를 분할합니다.
         
@@ -83,7 +83,7 @@ class TextSplitter:
         
         return chunks
     
-    def split_by_characters(self, text: str, chunk_size: int = None) -> List[str]:
+    def split_by_characters(self, text: str, chunk_size: Optional[int] = None) -> List[str]:
         """
         문자 수 기준으로 텍스트를 분할합니다.
         
@@ -105,7 +105,7 @@ class TextSplitter:
         
         return chunks
     
-    def split_recursive(self, text: str, separators: List[str] = None) -> List[str]:
+    def split_recursive(self, text: str, separators: Optional[List[str]] = None) -> List[str]:
         """
         재귀적으로 텍스트를 분할합니다.
         
@@ -166,7 +166,7 @@ class TextSplitter:
         
         return unique_chunks
     
-    def add_metadata(self, chunks: List[str], source_info: Dict[str, Any] = None) -> List[Dict[str, Any]]:
+    def add_metadata(self, chunks: List[str], source_info: Optional[Dict[str, Any]] = None) -> List[Dict[str, Any]]:
         """
         청크에 메타데이터를 추가합니다.
         

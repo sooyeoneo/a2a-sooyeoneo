@@ -6,7 +6,7 @@ embedding_manager.py
 - 유사도 계산 최적화
 """
 import numpy as np
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional, Tuple, cast
 import pickle
 import os
 from datetime import datetime
@@ -70,16 +70,21 @@ class EmbeddingManager:
         """
         if not self.embeddings_model:
             raise ValueError("임베딩 모델이 초기화되지 않았습니다.")
-        
         try:
-            if hasattr(self.embeddings_model, 'encode'):
+            if SENTENCE_TRANSFORMERS_AVAILABLE and isinstance(self.embeddings_model, SentenceTransformer):
                 # Sentence Transformers
-                embeddings = self.embeddings_model.encode(texts, convert_to_tensor=False)
-                return embeddings.tolist() if hasattr(embeddings, 'tolist') else embeddings
-            else:
+                model = cast(SentenceTransformer, self.embeddings_model)
+                embeddings = model.encode(texts, convert_to_tensor=False)
+                # numpy array일 경우 리스트로 변환
+                if hasattr(embeddings, 'tolist'):
+                    return embeddings.tolist()
+                return list(embeddings)
+            elif OPENAI_AVAILABLE and isinstance(self.embeddings_model, OpenAIEmbeddings):
                 # OpenAI Embeddings
                 embeddings = self.embeddings_model.embed_documents(texts)
                 return embeddings
+            else:
+                raise ValueError("지원하지 않는 임베딩 모델입니다.")
         except Exception as e:
             print(f"❌ 임베딩 생성 실패: {e}")
             # 더미 임베딩 반환
@@ -108,18 +113,13 @@ class EmbeddingManager:
         Returns:
             float: 코사인 유사도 (0~1)
         """
-        vec1 = np.array(vec1)
-        vec2 = np.array(vec2)
-        
-        # 정규화
-        norm1 = np.linalg.norm(vec1)
-        norm2 = np.linalg.norm(vec2)
-        
+        arr1 = np.array(vec1)
+        arr2 = np.array(vec2)
+        norm1 = np.linalg.norm(arr1)
+        norm2 = np.linalg.norm(arr2)
         if norm1 == 0 or norm2 == 0:
             return 0.0
-        
-        # 코사인 유사도 계산
-        similarity = np.dot(vec1, vec2) / (norm1 * norm2)
+        similarity = np.dot(arr1, arr2) / (norm1 * norm2)
         return float(similarity)
     
     def find_similar_chunks(self, query_embedding: List[float], 
