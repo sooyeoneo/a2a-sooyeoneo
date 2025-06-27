@@ -10,7 +10,7 @@ from jinja2 import Template
 import json
 
 # 1. DuckDuckGo 웹 검색 함수 (무료, API 키 불필요)
-def web_search(query: str, api_key: str = None) -> Dict[str, Any]:
+def web_search(query: str, api_key: Optional[str] = None) -> Dict[str, Any]:
     """
     DuckDuckGo 검색 API를 이용해 쿼리 결과를 반환합니다.
     """
