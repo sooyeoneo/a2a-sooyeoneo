@@ -19,8 +19,8 @@ from .embedding_manager import EmbeddingManager
 class EnhancedRAGPipeline:
     """향상된 RAG 파이프라인을 담당하는 클래스"""
     
-    def __init__(self, embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2",
-                 openai_api_key: Optional[str] = None):
+    def __init__(self, openai_api_key: Optional[str] = None,
+                 embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"):
         # 각 단계별 컴포넌트 초기화
         self.data_processor = CompanyDataProcessor(embedding_model)
         self.embedding_manager = EmbeddingManager(embedding_model)
