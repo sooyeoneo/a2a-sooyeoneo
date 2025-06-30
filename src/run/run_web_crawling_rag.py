@@ -20,13 +20,11 @@ import argparse
 import json
 from pathlib import Path
 
-from rag_pipeline.web_crawling_rag_pipeline import WebCrawlingRAGPipeline
-
-# from ..rag_pipeline.web_crawling_rag_pipeline import WebCrawlingRAGPipeline
-
 # 프로젝트 루트를 Python 경로에 추가
-project_root = Path(__file__).parent
+project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
+
+from rag_pipeline.web_crawling_rag_pipeline import WebCrawlingRAGPipeline
 
 
 def main():
