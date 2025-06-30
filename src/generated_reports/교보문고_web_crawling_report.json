@@ -1,0 +1,81 @@
+{
+  "company_name": "교보문고",
+  "generation_method": "web_crawling_rag",
+  "raw_data": {
+    "name": "(주)교보문고",
+    "established_year": 1981,
+    "company_type": "주식회사",
+    "is_listed": 1,
+    "homepage": "http://www.kyobobook.co.kr",
+    "description": "교보문고는 고객의 진정한 지식 및 (예술)문화콘텐츠 파트너입니다.\n\n우리의 사명은 모든 사람이 다양한 지식 및 (예술)문화콘텐츠를 경험해 지적/문화적/사회적으로 성장할 수 있도록 도와드리는 것입니다.",
+    "address": "서울 종로구 종로 1 (종로1가, 교보생명빌딩)",
+    "industry": "[\"서적, 신문 및 잡지류 소매업\"]",
+    "products_services": "[\"도서\", \"전자학습용품\", \"교구 소매/전자상거래/북카페\"]",
+    "key_executive": "허정도",
+    "employee_count": 1,
+    "employee_history": "\"{\\\"2013\\\": \\\"1,045명\\\", \\\"2014\\\": \\\"1,024명\\\", \\\"2015\\\": \\\"1,024명\\\", \\\"2016\\\": \\\"1,040명\\\"}\"",
+    "latest_revenue": "977052375",
+    "latest_operating_income": "-12249819",
+    "latest_net_income": "-16103638",
+    "latest_fiscal_year": 2024,
+    "financial_history": "{\"2024\": {\"자산합계\": \"553162919\", \"자본금\": \"5019050\", \"자본금합계\": \"217827966\", \"매출액\": \"977052375\", \"영업이익\": \"-12249819\", \"당기순이익\": \"-16103638\"}, \"2023\": {\"자산합계\": \"552309656\", \"자본금\": \"5019050\", \"자본금합계\": \"236802555\", \"매출액\": \"901374433\", \"영업이익\": \"-36047105\", \"당기순이익\": \"-41848329\"}, \"2022\": {\"자산합계\": \"533218910\", \"자본금\": \"5019050\", \"자본금합계\": \"278833983\", \"매출액\": \"832378991\", \"영업이익\": \"-13887847\", \"당기순이익\": \"-9679481\"}, \"2021\": {\"매출액\": \"790899100000\", \"영업이익\": \"17510000\", \"당기순이익\": \"672460000\", \"자본금\": \"4934760000\"}}",
+    "total_funding": null,
+    "latest_funding_round": null,
+    "latest_funding_date": null,
+    "latest_valuation": null,
+    "investment_history": "\"\"",
+    "investors": "\"\"",
+    "market_cap": null,
+    "stock_ticker": null,
+    "stock_exchange": null,
+    "patent_count": null,
+    "trademark_count": null,
+    "ip_details": "\"\"",
+    "tech_stack": "\"\"",
+    "recent_news": "\"\"",
+    "target_customers": "교보문고의 주요 목표 고객층은 도서 구매 및 독서에 대한 관심도가 높은 20~40대 독서 성향이 강한 중장년층이다.",
+    "competitors": "교보문고의 주요 경쟁사는 온라인 서점 점유율 1위인 예스24와 중고 도서 시장을 중심으로 성장한 알라딘이며, 리디북스와 밀리의 서재는 전자책 및 구독 서비스 시장에서 빠르게 독서 인구를 흡수하고 있습니다 .",
+    "strengths": "교보문고는 대한민국 최대 서점 체인으로서 오랜 역사와 높은 브랜드 인지도를 바탕으로 다양한 도서와 디지털 콘텐츠를 제공하며 고객 접근성과 선택권을 높이는 강점을 지닙니다 .",
+    "risk_factors": "교보문고는 도서정가제 시행, 중고 시장 성장, 온라인 서점 및 모바일 콘텐츠와의 경쟁 심화, 그리고 2022년 360.4억 원의 영업손실 기록 등이 위험 요인입니다 .",
+    "recent_trends": "교보문고는 2025년 6월, 전자책 접근성 향상 협약 체결, 서울국제도서전 온라인 기획전 개최, 국제성모병원과 기부문화 확산 협약, 그리고 '2025 대한민국 교육브랜드 대상'에서 3개 부문을 수상했습니다."
+  },
+  "rag_results": {
+    "대표자": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "직원 수": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "매출액": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "설립년도": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "업종": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    }
+  },
+  "summary": {
+    "total_fields_searched": 5,
+    "successful_extractions": 5,
+    "failed_extractions": 0
+  },
+  "extracted_information": {
+    "대표자": null,
+    "직원 수": null,
+    "매출액": null,
+    "설립년도": null,
+    "업종": null
+  }
+}

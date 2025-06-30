@@ -1,0 +1,81 @@
+{
+  "company_name": "토스 페이먼츠",
+  "generation_method": "web_crawling_rag",
+  "raw_data": {
+    "name": "",
+    "established_year": null,
+    "company_type": null,
+    "is_listed": 0,
+    "homepage": null,
+    "description": null,
+    "address": null,
+    "industry": null,
+    "products_services": null,
+    "key_executive": null,
+    "employee_count": null,
+    "employee_history": "\"\"",
+    "latest_revenue": null,
+    "latest_operating_income": null,
+    "latest_net_income": null,
+    "latest_fiscal_year": null,
+    "financial_history": null,
+    "total_funding": null,
+    "latest_funding_round": null,
+    "latest_funding_date": null,
+    "latest_valuation": null,
+    "investment_history": "\"\"",
+    "investors": "\"\"",
+    "market_cap": null,
+    "stock_ticker": null,
+    "stock_exchange": null,
+    "patent_count": null,
+    "trademark_count": null,
+    "ip_details": "\"\"",
+    "tech_stack": "\"\"",
+    "recent_news": "\"\"",
+    "target_customers": "토스페이먼츠의 주요 목표 고객층은 편리하고 혁신적인 금융 솔루션을 찾는 기술에 능숙한 20~30대 밀레니얼 세대와 젊은 전문직 종사자입니다.",
+    "competitors": "토스페이먼츠의 주요 경쟁사는 KG이니시스, NHN한국사이버결제, 카카오페이, 네이버페이, 다날이며, 이들은 전자결제 시장에서 기술 혁신, 가맹점 확보, 그리고 사용자 편의성 증진을 통해 경쟁하고 있습니다.",
+    "strengths": "토스페이먼츠는 기술 혁신을 통해 PG 가입 프로세스를 6분으로 단축하고, 결제 연동을 간편화하여 가맹점의 사업 운영 효율성을 높이는 데 기여하고, 누적 거래액 171조 원, 누적 거래 건수 37억 건, 월평균 거래액 3조 원, 제휴 가맹점 9만+를 달성했습니다 .",
+    "risk_factors": "토스페이먼츠는 티메프 사태와 PG업계 전반의 손실, 경쟁 심화, 규제 강화, 대규모 투자에 따른 손실 지속, 그리고 데이터 유출 및 보안 문제 등이 위험 요인입니다 .",
+    "recent_trends": "토스페이먼츠는 5년 연속 정보보호 관리체계(ISMS) 인증을 획득하고, 보안 전담 인력을 6배 늘렸으며, 정보기술부문 투자액 대비 정보보호 항목 비중을 10.2%로 유지하고, 온라인 결제 서비스와 오프라인 서비스 연결을 위한 결제 단말기 '커넥트(CONNECT)'를 올가을 출시할 예정입니다."
+  },
+  "rag_results": {
+    "대표자": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "직원 수": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "매출액": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "설립년도": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "업종": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    }
+  },
+  "summary": {
+    "total_fields_searched": 5,
+    "successful_extractions": 5,
+    "failed_extractions": 0
+  },
+  "extracted_information": {
+    "대표자": null,
+    "직원 수": null,
+    "매출액": null,
+    "설립년도": null,
+    "업종": null
+  }
+}

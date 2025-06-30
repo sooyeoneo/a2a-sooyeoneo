@@ -1,0 +1,81 @@
+{
+  "company_name": "청호나이스",
+  "generation_method": "web_crawling_rag",
+  "raw_data": {
+    "name": "청호나이스㈜",
+    "established_year": 1994,
+    "company_type": "주식회사",
+    "is_listed": 1,
+    "homepage": "http://www.chungho.co.kr",
+    "description": "[ 기업소개 ] [ 기업이념 및 미션 ] [ 사업분야 ] [ 인재상 ]",
+    "address": "서울 서초구 사임당로 28 (서초동, 청호나이스) 청호나이스",
+    "industry": "[\"전기·전자·제어\"]",
+    "products_services": "[\"정수기\", \"비데\", \"공기청정기 제조 및 판매\"]",
+    "key_executive": "김성태",
+    "employee_count": 1,
+    "employee_history": "\"{\\\"2025\\\": \\\"1,141명\\\"}\"",
+    "latest_revenue": "472696551",
+    "latest_operating_income": "67039363",
+    "latest_net_income": "67908037",
+    "latest_fiscal_year": 2024,
+    "financial_history": "{\"2024\": {\"자산합계\": \"564831459\", \"자본금\": \"10389875\", \"자본금합계\": \"412712681\", \"매출액\": \"472696551\", \"영업이익\": \"67039363\", \"당기순이익\": \"67908037\"}, \"2023\": {\"자산합계\": \"508794855\", \"자본금\": \"10389875\", \"자본금합계\": \"343783884\", \"매출액\": \"452866542\", \"영업이익\": \"45002228\", \"당기순이익\": \"50527457\"}, \"2022\": {\"자산합계\": \"460864055\", \"자본금\": \"10389875\", \"자본금합계\": \"292863043\", \"매출액\": \"435509936\", \"영업이익\": \"31603229\", \"당기순이익\": \"35757426\"}, \"2021\": {\"매출액\": \"421026440000\", \"영업이익\": \"44746910000\", \"당기순이익\": \"16414440000\", \"자본금\": \"10389880000\"}}",
+    "total_funding": null,
+    "latest_funding_round": null,
+    "latest_funding_date": null,
+    "latest_valuation": null,
+    "investment_history": "\"\"",
+    "investors": "\"\"",
+    "market_cap": null,
+    "stock_ticker": null,
+    "stock_exchange": null,
+    "patent_count": null,
+    "trademark_count": null,
+    "ip_details": "\"\"",
+    "tech_stack": "\"\"",
+    "recent_news": "\"\"",
+    "target_customers": "청호나이스의 주요 목표 고객층은 구매력을 갖춘 젊은 층으로, 렌탈 서비스를 선호하며 인테리어에 관심이 많고 이사를 자주 다니는 소비자들이 주 타겟입니다 .",
+    "competitors": "청호나이스의 주요 경쟁사는 렌탈 시장에서 코웨이, SK매직, LG전자, 쿠쿠홈시스 등이며, 코웨이가 약 40%의 점유율로 1위를 달리고 있고, LG전자와 SK매직이 2위 자리를 두고 경쟁하고 있습니다 .",
+    "strengths": "청호나이스는 얼음정수기, 커피정수기 등 혁신적인 제품을 세계 최초로 출시한 기술력과 142개 유해물질 제거 성능을 입증받은 필터 기술력을 보유하고 있으며, 2024년 매출액 4,782억 원, 영업이익 650억 원을 기록했습니다 .",
+    "risk_factors": "청호나이스는 경쟁 심화된 렌탈 시장, 해외 시장에서의 상대적 더딘 성장, 그리고 특허 관련 소송 등의 리스크를 가지고 있습니다.",
+    "recent_trends": "청호나이스는 2024년 매출 4727억원, 영업이익 670억원을 기록하며 성장세를 이어가고 있으며, 개인 맞춤형 정수기 라인업 강화와 해외 시장 개척을 통해 K-가전의 저력을 알리고 전문경영인 체제를 통한 안정적인 기업 운영을 추구하는 중견 가전렌탈 업체이다 ."
+  },
+  "rag_results": {
+    "대표자": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "직원 수": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "매출액": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "설립년도": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    },
+    "업종": {
+      "data": null,
+      "valid": true,
+      "source": "web_crawling"
+    }
+  },
+  "summary": {
+    "total_fields_searched": 5,
+    "successful_extractions": 5,
+    "failed_extractions": 0
+  },
+  "extracted_information": {
+    "대표자": null,
+    "직원 수": null,
+    "매출액": null,
+    "설립년도": null,
+    "업종": null
+  }
+}
