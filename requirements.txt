@@ -71,4 +71,10 @@ langchain-ollama==0.2.3
 mypy==1.15.0
 pinecone==5.4.2
 wikipedia==1.4.0
-scikit-learn==1.6.1 
+scikit-learn==1.6.1
+
+# 웹크롤링 관련 의존성
+selenium==4.18.1
+beautifulsoup4==4.12.3
+requests==2.31.0
+webdriver-manager==4.0.1 
