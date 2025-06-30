@@ -1,0 +1,45 @@
+{
+  "company_name": "무신사",
+  "generated_at": "2025-06-30T12:47:53.677648",
+  "fields": {
+    "대표자": {
+      "value": "박준모",
+      "confidence": 0.9085692296403112,
+      "source": "RAG 검색",
+      "valid": true
+    },
+    "매출액": {
+      "value": "정보 없음",
+      "confidence": 0.0,
+      "source": "알 수 없음",
+      "valid": false
+    },
+    "직원수": {
+      "value": "510명",
+      "confidence": 0.7219927154811518,
+      "source": "RAG 검색",
+      "valid": true
+    },
+    "설립년도": {
+      "value": "정보 없음",
+      "confidence": 0.0,
+      "source": "알 수 없음",
+      "valid": false
+    },
+    "업종": {
+      "value": "정보 없음",
+      "confidence": 0.0,
+      "source": "알 수 없음",
+      "valid": false
+    }
+  },
+  "validation_summary": {
+    "total_fields": 2,
+    "valid_fields": 2,
+    "invalid_fields": 0,
+    "retry_fields": 0,
+    "accuracy": 1.0,
+    "avg_confidence": 0.95,
+    "overall_valid": true
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "pipeline_config": {
+    "collection_name": "company_data",
+    "similarity_threshold": 0.7,
+    "max_retries": 3,
+    "exported_at": "2025-06-30T15:53:50.854947"
+  },
+  "vector_store_metadata": {
+    "created_at": "2025-06-30T15:52:53.950618",
+    "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+    "chunk_count": 11,
+    "embedding_dimension": 384
+  },
+  "ground_truth": {
+    "무신사": {
+      "대표자": "박준모",
+      "매출액": "1조 1,005억원",
+      "직원수": "510명",
+      "설립년도": "2012",
+      "업종": "쇼핑몰·오픈마켓·소셜커머스"
+    }
+  }
+}
