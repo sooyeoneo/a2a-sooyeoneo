@@ -23,6 +23,7 @@ from pathlib import Path
 from datetime import datetime
 import re
 import traceback
+from dotenv import load_dotenv
 
 # 프로젝트 루트를 Python 경로에 추가
 project_root = Path(__file__).parent.parent
@@ -34,6 +35,28 @@ except ImportError as e:
     print(f"❌ RAG 파이프라인 모듈을 찾을 수 없습니다: {e}")
     print("프로젝트 구조를 확인해주세요.")
     sys.exit(1)
+
+
+def init_langsmith_tracing():
+    """LangSmith 추적 초기화"""
+    load_dotenv()
+    
+    # 환경변수 설정
+    os.environ["LANGCHAIN_TRACING_V2"] = "true"
+    api_key = os.getenv("LANGSMITH_API_KEY")
+    if api_key:
+        os.environ["LANGCHAIN_API_KEY"] = api_key
+    os.environ["LANGCHAIN_PROJECT"] = "LEADSCOUT"
+    
+    # 상태 확인 및 출력
+    api_key = os.getenv("LANGCHAIN_API_KEY")
+    if api_key:
+        print("✅ LangSmith 추적이 활성화되었습니다.")
+        print(f"📊 프로젝트: {os.getenv('LANGCHAIN_PROJECT')}")
+    else:
+        print("⚠️ LANGSMITH_API_KEY가 설정되지 않았습니다.")
+        print("   .env 파일에 LANGSMITH_API_KEY를 추가하거나")
+        print("   환경변수로 설정해주세요.")
 
 
 def sanitize_filename(filename):
@@ -459,4 +482,5 @@ def main():
 
 
 if __name__ == "__main__":
+    init_langsmith_tracing()  # LangSmith 추적 초기화
     main()
