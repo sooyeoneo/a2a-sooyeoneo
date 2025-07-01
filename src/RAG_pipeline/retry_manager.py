@@ -15,19 +15,35 @@ try:
 except ImportError:
     OPENAI_AVAILABLE = False
 
+try:
+    from langchain_openai import ChatOpenAI
+    LANGCHAIN_AVAILABLE = True
+except ImportError:
+    LANGCHAIN_AVAILABLE = False
+
 class RetryManager:
     """LLM 재호출 및 Web Search를 담당하는 클래스"""
     
     def __init__(self, openai_api_key: Optional[str] = None):
         self.openai_client = None
+        self.langchain_llm = None
         self.max_retries = 3
         self.retry_delay = 1  # 초
         
+        # LangChain LLM 우선 초기화 (LangSmith 추적용)
+        if LANGCHAIN_AVAILABLE:
+            try:
+                self.langchain_llm = ChatOpenAI(model="gpt-4o", temperature=0.1)
+                print("✅ LangChain LLM 초기화 완료 (LangSmith 추적 활성화)")
+            except Exception as e:
+                print(f"⚠️ LangChain LLM 초기화 실패: {e}")
+        
+        # OpenAI 클라이언트 폴백
         if OPENAI_AVAILABLE:
             api_key = openai_api_key or os.getenv("OPENAI_API_KEY")
             if api_key:
                 self.openai_client = OpenAI(api_key=api_key)
-                print("✅ OpenAI 클라이언트 초기화 완료")
+                print("✅ OpenAI 클라이언트 초기화 완료 (폴백용)")
             else:
                 print("⚠️ OpenAI API 키가 설정되지 않았습니다.")
         else:
@@ -47,12 +63,78 @@ class RetryManager:
         Returns:
             Dict: 재검색 결과
         """
-        if not self.openai_client:
+        # LangChain LLM 우선 사용 (LangSmith 추적용)
+        if self.langchain_llm:
+            print(f"  🤖 LangChain LLM 사용 중 (LangSmith 추적 활성화)")
+            return self._retry_with_langchain_llm(company_name, field_name, original_query, validation_error)
+        
+        # OpenAI 클라이언트 폴백
+        if self.openai_client:
+            print(f"  🤖 OpenAI 클라이언트 사용 중 (LangSmith 추적 없음)")
+            return self._retry_with_openai_client(company_name, field_name, original_query, validation_error)
+        
+        return {
+            "success": False,
+            "error": "LLM 클라이언트가 초기화되지 않았습니다.",
+            "retry_count": 0
+        }
+    
+    def _retry_with_langchain_llm(self, company_name: str, field_name: str, 
+                                  original_query: str, validation_error: str) -> Dict[str, Any]:
+        """LangChain LLM을 사용한 재검색 (LangSmith 추적 활성화)"""
+        retry_prompt = f"""
+        다음 회사 정보를 정확하게 찾아주세요:
+        
+        회사명: {company_name}
+        찾고자 하는 정보: {field_name}
+        원본 쿼리: {original_query}
+        검증 오류: {validation_error}
+        
+        위 정보를 바탕으로 정확한 {field_name} 정보를 찾아주세요.
+        만약 정보를 찾을 수 없다면 "정보 없음"으로 응답하세요.
+        """
+        
+        try:
+            if not self.langchain_llm:
+                return {
+                    "success": False,
+                    "error": "LangChain LLM이 초기화되지 않았습니다.",
+                    "retry_count": 1
+                }
+            
+            response = self.langchain_llm.invoke(retry_prompt)
+            content = str(response.content)
+            
+            if "정보 없음" in content or "확인할 수 없" in content:
+                return {
+                    "success": True,
+                    "extracted_data": None,
+                    "confidence": 0.0,
+                    "source": "LangChain LLM 재검색",
+                    "retry_count": 1,
+                    "retried_at": datetime.now().isoformat()
+                }
+            
+            return {
+                "success": True,
+                "extracted_data": content.strip(),
+                "confidence": 0.8,
+                "source": "LangChain LLM 재검색",
+                "retry_count": 1,
+                "retried_at": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
             return {
                 "success": False,
-                "error": "OpenAI 클라이언트가 초기화되지 않았습니다.",
-                "retry_count": 0
+                "error": f"LangChain LLM 호출 중 오류: {str(e)}",
+                "retry_count": 1,
+                "retried_at": datetime.now().isoformat()
             }
+    
+    def _retry_with_openai_client(self, company_name: str, field_name: str, 
+                                  original_query: str, validation_error: str) -> Dict[str, Any]:
+        """OpenAI 클라이언트를 사용한 재검색 (폴백용)"""
         
         # 재검색 프롬프트
         retry_prompt = f"""
@@ -68,6 +150,13 @@ class RetryManager:
         """
         
         try:
+            if not self.openai_client:
+                return {
+                    "success": False,
+                    "error": "OpenAI 클라이언트가 초기화되지 않았습니다.",
+                    "retry_count": 1
+                }
+            
             response = self.openai_client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[

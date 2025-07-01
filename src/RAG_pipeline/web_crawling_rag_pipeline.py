@@ -268,12 +268,47 @@ class WebCrawlingRAGPipeline:
         # 5. RAG 파이프라인 실행
         print("🔍 RAG 파이프라인 실행 중...")
 
-        # 검색할 필드들
-        search_fields = ["대표자", "직원 수", "매출액", "설립년도", "업종"]
+        # 숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용
+        numeric_fields = {
+            "임직원_수": "employee_count",
+            "설립일": "established_year", 
+            "최신_매출": "latest_revenue",
+            "최신_영업이익": "latest_operating_income",
+            "최신_순이익": "latest_net_income",
+            "재무_상태": "financial_history"
+        }
+        
+        # 텍스트 데이터는 RAG 검증 수행
+        text_fields = ["대표자", "업종", "기업_요약", "주요_서비스_제품", "목표_고객", "주요_경쟁사", "강점", "위험_요인", "최근_동향"]
 
         results = {}
 
-        for field in search_fields:
+        # 1. 숫자 데이터 처리 - 웹크롤링 데이터를 그대로 사용
+        print("🔢 숫자 데이터 처리 중 (RAG 검증 건너뛰기)...")
+        print(f"📊 원본 웹크롤링 데이터: {company_data}")
+        
+        for korean_field, english_field in numeric_fields.items():
+            raw_value = company_data.get(english_field)
+            if raw_value:
+                print(f"  ✅ {korean_field}: {raw_value} (웹크롤링 데이터 그대로 사용)")
+                results[korean_field] = {
+                    "data": raw_value,
+                    "valid": True,
+                    "source": "web_crawling_direct",
+                    "note": "숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용"
+                }
+            else:
+                print(f"  ❌ {korean_field}: 웹크롤링 데이터 없음")
+                results[korean_field] = {
+                    "data": "정보 없음",
+                    "valid": False,
+                    "source": "web_crawling",
+                    "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+                }
+
+        # 2. 텍스트 데이터 처리 - RAG 검증 수행
+        print("📝 텍스트 데이터 처리 중 (RAG 검증 수행)...")
+        for field in text_fields:
             print(f"🔍 '{field}' 검색 중...")
 
             # 유사도 검색
@@ -291,6 +326,7 @@ class WebCrawlingRAGPipeline:
             is_valid = validation_result["valid"]
 
             if not is_valid:
+                print(f"  🔄 '{field}' 검증 실패, LLM 재시도 중...")
                 # 재시도 로직
                 retry_result = self.retry_manager.retry_with_llm(
                     company_name, field, field, validation_result["reason"]
@@ -298,11 +334,16 @@ class WebCrawlingRAGPipeline:
                 if retry_result["success"]:
                     extracted_data = retry_result["extracted_data"]
                     is_valid = True
+                    print(f"  ✅ '{field}' LLM 재시도 성공")
+                else:
+                    print(f"  ❌ '{field}' LLM 재시도 실패")
+            else:
+                print(f"  ✅ '{field}' 검증 성공 (LLM 호출 없음)")
 
             results[field] = {
                 "data": extracted_data,
                 "valid": is_valid,
-                "source": "web_crawling",
+                "source": "rag_pipeline",
             }
 
         # 6. 보고서 생성
