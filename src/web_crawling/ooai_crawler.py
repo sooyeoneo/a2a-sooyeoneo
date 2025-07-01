@@ -131,6 +131,7 @@ def enrich_company_data(company_name: str, existing_data: dict) -> dict:
     """
     기존에 수집된 기업 데이터에서 비어있는 특정 필드들을 oo.ai 검색을 통해 보완.
     주요 목표 고객층, 경쟁사, 강점, 위험 요인, 최근 동향 등의 정보를 검색하여 `existing_data`를 업데이트.
+    수치화 관련 필드(임직원 수, 매출, 설립일 등)는 제외하고 검색합니다.
 
     Args:
         company_name(str): 기업명. oo.ai 검색 쿼리를 구성하는 데 사용.
@@ -143,12 +144,27 @@ def enrich_company_data(company_name: str, existing_data: dict) -> dict:
     """
     # oo.ai 보완할 필드 템플릿 적용
     fields_to_enrich = ooai_field(company_name)
+    
+    # 수치화 관련 필드들을 제외 (웹크롤링에서만 수집)
+    numeric_fields = {
+        'employee_count', 'revenue', 'established_year', 'address',
+        'company_size', 'annual_revenue', 'founded_year'
+    }
+    
+    # 수치화 관련 필드가 아닌 것들만 필터링
+    filtered_fields = {
+        field: query_template 
+        for field, query_template in fields_to_enrich.items() 
+        if field not in numeric_fields
+    }
+    
+    print(f"🔍 OO.ai에서 검색할 필드들 (수치화 관련 제외): {list(filtered_fields.keys())}")
 
     extra_prompt_guide = "에 대해 다음 가이드라인을 엄수하여 1문장으로 핵심만 요약해 주세요: 1. 불필요한 서론/결론 없이 바로 본론부터 시작. 2. 객관적인 정보만 포함. 3. 가능한 한 수치나 사실 기반으로 서술. 4. ~이다/입니다 체 종결 5. 관련 정보가 없을 경우 텍스트 대신 ''으로 출력."
 
     final_data = existing_data.copy()
 
-    for field, query_template in fields_to_enrich.items():
+    for field, query_template in filtered_fields.items():
         # 현재 필드 값이 비어있는지 확인
         if not final_data.get(field):
             print(
