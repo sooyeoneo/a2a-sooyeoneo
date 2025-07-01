@@ -15,7 +15,36 @@
     python src/run/run_web_crawling_rag.py "네이버" --verbose
 """
 
+# LangSmith/LangChain 트레이싱을 위한 환경변수 설정 (가장 먼저!)
+from dotenv import load_dotenv
 import os
+
+load_dotenv()  # .env에서 키 로드
+
+# LangSmith/LangChain 트레이싱 활성화
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+langsmith_api_key = os.getenv("LANGSMITH_API_KEY")
+if langsmith_api_key:
+    os.environ["LANGCHAIN_API_KEY"] = langsmith_api_key
+os.environ["LANGCHAIN_PROJECT"] = "LEADSCOUT"
+os.environ["LANGCHAIN_ENDPOINT"] = "https://api.smith.langchain.com"
+
+# OpenAI API 키도 미리 세팅
+openai_api_key = os.getenv("OPENAI_API_KEY")
+if openai_api_key:
+    os.environ["OPENAI_API_KEY"] = openai_api_key
+
+# 상태 확인 및 출력
+api_key = os.getenv("LANGCHAIN_API_KEY")
+if api_key:
+    print("✅ LangSmith 추적이 활성화되었습니다.")
+    print(f"📊 프로젝트: {os.getenv('LANGCHAIN_PROJECT')}")
+    print(f"🌐 엔드포인트: {os.getenv('LANGCHAIN_ENDPOINT')}")
+else:
+    print("⚠️ LANGSMITH_API_KEY가 설정되지 않았습니다.")
+    print("   .env 파일에 LANGSMITH_API_KEY를 추가하거나")
+    print("   환경변수로 설정해주세요.")
+
 import sys
 import argparse
 import json
@@ -23,7 +52,6 @@ from pathlib import Path
 from datetime import datetime
 import re
 import traceback
-from dotenv import load_dotenv
 
 # 프로젝트 루트를 Python 경로에 추가
 project_root = Path(__file__).parent.parent
@@ -38,21 +66,13 @@ except ImportError as e:
 
 
 def init_langsmith_tracing():
-    """LangSmith 추적 초기화"""
-    load_dotenv()
-    
-    # 환경변수 설정
-    os.environ["LANGCHAIN_TRACING_V2"] = "true"
-    api_key = os.getenv("LANGSMITH_API_KEY")
-    if api_key:
-        os.environ["LANGCHAIN_API_KEY"] = api_key
-    os.environ["LANGCHAIN_PROJECT"] = "LEADSCOUT"
-    
-    # 상태 확인 및 출력
+    """LangSmith 추적 초기화 (이미 스크립트 상단에서 설정됨)"""
+    # 환경변수는 이미 스크립트 상단에서 설정되었으므로 상태만 확인
     api_key = os.getenv("LANGCHAIN_API_KEY")
     if api_key:
         print("✅ LangSmith 추적이 활성화되었습니다.")
         print(f"📊 프로젝트: {os.getenv('LANGCHAIN_PROJECT')}")
+        print(f"🌐 엔드포인트: {os.getenv('LANGCHAIN_ENDPOINT')}")
     else:
         print("⚠️ LANGSMITH_API_KEY가 설정되지 않았습니다.")
         print("   .env 파일에 LANGSMITH_API_KEY를 추가하거나")
