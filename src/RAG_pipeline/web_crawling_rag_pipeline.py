@@ -53,7 +53,7 @@ class WebCrawlingRAGPipeline:
         print("📊 잡코리아에서 데이터 수집 중...")
         jobkorea_data = smart_crawl_jobkorea(company_name)
 
-        # 2. 사람인에서 데이터 수집
+        # 2. 사람인에서 데이터 수집테
         print("📊 사람인에서 데이터 수집 중...")
         saramin_data = crawl_from_saramin(company_name)
 
