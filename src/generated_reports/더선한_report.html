@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>더선한 기업 정보</title>
+    <style>
+        body { max-width: 900px; margin: 0 auto; padding: 20px; box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif; color: #3b3b3b; background-color: #e1e1e1; }
+        header { border-bottom: 1px solid #3b3b3b; margin-bottom: 20px; }
+        header .report-header { display: flex; align-items: center; gap: 10px; }
+        .logo { max-width: 100px; max-height: 100px; margin-right: 20px; }
+        .company-title h1 { margin-bottom: 5px; }
+        main { background-image: url('https://web-portfolio-files.s3.ap-northeast-2.amazonaws.com/a2a-logo.png'); background-repeat: no-repeat; background-position: left bottom; background-size: 400px auto; }
+        section { border-bottom: 1px solid #3b3b3b; padding-bottom: 20px; margin-bottom: 20px; }
+        .info-item { display: flex; align-items: baseline; gap: 30px; border-bottom: 1px solid #d9d9d9; padding: 10px 0; }
+        .info-item h3 { min-width: 150px; font-size: 15px; color: #3b3b3b; font-weight: 600; margin: 0; }
+        .info-item p, .info-item ul { color: #595858; font-size: 15px; margin: 0; flex: 1; }
+        .double-item { display: flex; flex-direction: row; gap: 50px; }
+        .inline-pair { display: flex; align-items: baseline; gap: 30px; }
+        .highlight { color: #4708dc; font-weight: bold; }
+        .text-bold { font-weight: bold; }
+        .half-flex { flex: 1; }
+        .negative { color: #d32f2f; }
+        ul { list-style-type: disc; padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        a { color: #4708dc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        @media print { section, .info-item { page-break-inside: avoid; } header, main, section { border-bottom: none; } body { border: 1px solid #d9d9d9; } }
+    </style>
+</head>
+<body>
+<header class="header">
+    <div class="company-title">
+        <p class="report-header">
+            <img src="https://web-portfolio-files.s3.ap-northeast-2.amazonaws.com/peak-logo.png" alt="logo" class="logo-small"/>
+            기업 분석 리포트
+        </p>
+        <h1>더선한</h1>
+        <p>["컴퓨터 프로그래밍 서비스업"]</p>
+    </div>
+</header>
+<main>
+    <section class="section-basic-info">
+        <div>
+            <div class="info-item"><h3>주요 산업</h3><p>["컴퓨터 프로그래밍 서비스업"]</p></div>
+            <div class="info-item"><h3>회사 주소/위치</h3><p>경남 진주시 비봉로33번길 14, 1층</p></div>
+            <div class="double-item info-item">
+                <div class="inline-pair half-flex"><h3>대표자</h3><p>권태욱</p></div>
+                <div class="inline-pair half-flex"><h3>설립일</h3><p>정보 없음</p></div>
+            </div>
+            <div class="info-item"><h3>기업 요약</h3><p>정보 없음</p></div>
+            <div class="info-item"><h3>주요 서비스/제품</h3><p>정보 없음</p></div>
+            <div class="info-item"><h3>임직원 수</h3><p>정보 없음</p></div>
+            <div class="info-item"><h3>재무 상태</h3>
+                <div>
+                    <ul>
+                        <li>{"2023": {"매출액": "3460000", "영업이익": "3280000", "당기순이익": "3020000", "자본금": "1000000"}, "2024": {"매출액": "111250000", "영업이익": "11350000", "당기순이익": "10690000", "자본금": "1000000"}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="info-item"><h3>최신 매출</h3><p>111250000</p></div>
+            <div class="info-item"><h3>최신 영업이익</h3><p class="">11350000</p></div>
+            <div class="info-item"><h3>최신 순이익</h3><p class="">10690000</p></div>
+            <div class="info-item"><h3>목표 고객</h3><p>더 선한 기업의 주요 목표 고객층은 ESG 경영을 실천하는 기업의 제품에 더 높은 가격을 지불할 의향이 있는 MZ세대 소비자들입니다.</p></div>
+            <div class="info-item"><h3>주요 경쟁사</h3><p>더선한(주)의 주요 경쟁사 현황 더선한(주)의 주요 경쟁사에 대한 정보는 찾을 수 없습니다.</p></div>
+            <div class="info-item"><h3>강점</h3><p>더 선한 기업의 강점은 ESG 경영을 통해 재무 성과 개선, 투자 유치, 소비자 신뢰 확보, 인재 유치, 위기 관리, 비용 절감, 사회 및 환경 기여, 이해관계자 관계 강화 등 지속 가능한 성장을 가능하게 한다는 점입니다 .</p></div>
+            <div class="info-item"><h3>위험 요인</h3><p>더 선한 기업의 위험 요인은 윤리적 기준 미비, 평판 손상, 재무적 불확실성, 법적 책임, 전략적 관리 실패, 자연 재해, 차별 및 괴롭힘, 비현실적인 목표, 기술 오용, 데이터 프라이버시 침해, 불공정 행위, 공급망 문제, 인권 침해, 소비자 문제, 지배 구조 문제 등을 포함하며, 이러한 요소들은 기업의 지속 가능한 성공에 부정적인 영향을 미칠 수 있습니다 .</p></div>
+            <div class="info-item"><h3>최근 동향</h3><p>더 선한 기업의 최근 동향은 ESG 경영 확산, 사회공헌 활동의 진화, AI 기술의 ESG 접목, 그리고 지속가능경영 보고서 발간 등으로 나타납니다.</p></div>
+            <div class="info-item"><h3>홈페이지</h3><p>정보 없음</p></div>
+        </div>
+    </section>
+</main>
+<footer style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #d9d9d9; text-align: center; color: #999; font-size: 12px;">
+    <p>생성일: 2025년 07월 01일 12:32</p>
+    <p>본 보고서는 웹크롤링 기반 RAG 파이프라인을 통해 자동으로 생성되었습니다.</p>
+</footer>
+</body>
+</html>

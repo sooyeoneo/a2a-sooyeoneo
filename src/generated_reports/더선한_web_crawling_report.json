@@ -1,0 +1,145 @@
+{
+  "company_name": "더선한",
+  "generation_method": "web_crawling_rag",
+  "raw_data": {
+    "name": "더선한(주)",
+    "established_year": null,
+    "company_type": "주식회사",
+    "is_listed": 1,
+    "homepage": null,
+    "description": null,
+    "address": "경남 진주시 비봉로33번길 14, 1층",
+    "industry": "[\"컴퓨터 프로그래밍 서비스업\"]",
+    "products_services": null,
+    "key_executive": "권태욱",
+    "employee_count": null,
+    "employee_history": "\"\"",
+    "latest_revenue": "111250000",
+    "latest_operating_income": "11350000",
+    "latest_net_income": "10690000",
+    "latest_fiscal_year": 2024,
+    "financial_history": "{\"2023\": {\"매출액\": \"3460000\", \"영업이익\": \"3280000\", \"당기순이익\": \"3020000\", \"자본금\": \"1000000\"}, \"2024\": {\"매출액\": \"111250000\", \"영업이익\": \"11350000\", \"당기순이익\": \"10690000\", \"자본금\": \"1000000\"}}",
+    "total_funding": null,
+    "latest_funding_round": null,
+    "latest_funding_date": null,
+    "latest_valuation": null,
+    "investment_history": "\"\"",
+    "investors": "\"\"",
+    "market_cap": null,
+    "stock_ticker": null,
+    "stock_exchange": null,
+    "patent_count": null,
+    "trademark_count": null,
+    "ip_details": "\"\"",
+    "tech_stack": "\"\"",
+    "recent_news": "\"\"",
+    "target_customers": "더 선한 기업의 주요 목표 고객층은 ESG 경영을 실천하는 기업의 제품에 더 높은 가격을 지불할 의향이 있는 MZ세대 소비자들입니다.",
+    "competitors": "더선한(주)의 주요 경쟁사 현황 더선한(주)의 주요 경쟁사에 대한 정보는 찾을 수 없습니다.",
+    "strengths": "더 선한 기업의 강점은 ESG 경영을 통해 재무 성과 개선, 투자 유치, 소비자 신뢰 확보, 인재 유치, 위기 관리, 비용 절감, 사회 및 환경 기여, 이해관계자 관계 강화 등 지속 가능한 성장을 가능하게 한다는 점입니다 .",
+    "risk_factors": "더 선한 기업의 위험 요인은 윤리적 기준 미비, 평판 손상, 재무적 불확실성, 법적 책임, 전략적 관리 실패, 자연 재해, 차별 및 괴롭힘, 비현실적인 목표, 기술 오용, 데이터 프라이버시 침해, 불공정 행위, 공급망 문제, 인권 침해, 소비자 문제, 지배 구조 문제 등을 포함하며, 이러한 요소들은 기업의 지속 가능한 성공에 부정적인 영향을 미칠 수 있습니다 .",
+    "recent_trends": "더 선한 기업의 최근 동향은 ESG 경영 확산, 사회공헌 활동의 진화, AI 기술의 ESG 접목, 그리고 지속가능경영 보고서 발간 등으로 나타납니다."
+  },
+  "rag_results": {
+    "임직원_수": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "설립일": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "최신_매출": {
+      "data": "111250000",
+      "valid": true,
+      "source": "web_crawling_direct",
+      "note": "숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용"
+    },
+    "최신_영업이익": {
+      "data": "11350000",
+      "valid": true,
+      "source": "web_crawling_direct",
+      "note": "숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용"
+    },
+    "최신_순이익": {
+      "data": "10690000",
+      "valid": true,
+      "source": "web_crawling_direct",
+      "note": "숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용"
+    },
+    "재무_상태": {
+      "data": "{\"2023\": {\"매출액\": \"3460000\", \"영업이익\": \"3280000\", \"당기순이익\": \"3020000\", \"자본금\": \"1000000\"}, \"2024\": {\"매출액\": \"111250000\", \"영업이익\": \"11350000\", \"당기순이익\": \"10690000\", \"자본금\": \"1000000\"}}",
+      "valid": true,
+      "source": "web_crawling_direct",
+      "note": "숫자 데이터는 RAG 검증을 건너뛰고 웹크롤링 데이터를 그대로 사용"
+    },
+    "대표자": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "업종": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "기업_요약": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "주요_서비스_제품": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "목표_고객": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "주요_경쟁사": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "강점": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "위험_요인": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "최근_동향": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    }
+  },
+  "summary": {
+    "total_fields_searched": 15,
+    "successful_extractions": 13,
+    "failed_extractions": 2
+  },
+  "extracted_information": {
+    "최신_매출": "111250000",
+    "최신_영업이익": "11350000",
+    "최신_순이익": "10690000",
+    "재무_상태": "{\"2023\": {\"매출액\": \"3460000\", \"영업이익\": \"3280000\", \"당기순이익\": \"3020000\", \"자본금\": \"1000000\"}, \"2024\": {\"매출액\": \"111250000\", \"영업이익\": \"11350000\", \"당기순이익\": \"10690000\", \"자본금\": \"1000000\"}}",
+    "대표자": null,
+    "업종": null,
+    "기업_요약": null,
+    "주요_서비스_제품": null,
+    "목표_고객": null,
+    "주요_경쟁사": null,
+    "강점": null,
+    "위험_요인": null,
+    "최근_동향": null
+  }
+}

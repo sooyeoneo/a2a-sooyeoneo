@@ -1,0 +1,141 @@
+{
+  "company_name": "CJ엔터테인먼트",
+  "generation_method": "web_crawling_rag",
+  "raw_data": {
+    "name": "",
+    "established_year": null,
+    "company_type": null,
+    "is_listed": 0,
+    "homepage": null,
+    "description": null,
+    "address": null,
+    "industry": null,
+    "products_services": null,
+    "key_executive": null,
+    "employee_count": null,
+    "employee_history": "\"\"",
+    "latest_revenue": null,
+    "latest_operating_income": null,
+    "latest_net_income": null,
+    "latest_fiscal_year": null,
+    "financial_history": null,
+    "total_funding": null,
+    "latest_funding_round": null,
+    "latest_funding_date": null,
+    "latest_valuation": null,
+    "investment_history": "\"\"",
+    "investors": "\"\"",
+    "market_cap": null,
+    "stock_ticker": null,
+    "stock_exchange": null,
+    "patent_count": null,
+    "trademark_count": null,
+    "ip_details": "\"\"",
+    "tech_stack": "\"\"",
+    "recent_news": "\"\"",
+    "target_customers": "CJ ENM 엔터테인먼트 부문의 주요 목표 고객층은 tvN의 경우 20~49세 남녀 시청자, 온스타일은 20~30대 여성, Olive는 25~44세 여성 시청자이며, 영화는 20~30대 여성 중심의 팬층, 음악은 K-POP의 글로벌 확산에 따라 아시아 및 미주 지역까지 core 팬덤이 증가하고 있습니다.",
+    "competitors": "CJ엔터테인먼트의 실질적인 주요 경쟁사는 IP를 활용한 다양한 사업을 전개하는 디즈니, 넷플릭스, HBO와 OTT 플랫폼을 통해 경쟁하는 카카오, 네이버 등입니다 .",
+    "strengths": "CJ ENM은 방송, 영화, 음악 등 다양한 콘텐츠 제작 능력과 CJ그룹의 지원, 글로벌 네트워크를 통해 아시아Pop 문화 세계화를 선도하는 종합 엔터테인먼트 기업입니다.",
+    "risk_factors": "CJ ENM은 콘텐츠 제작비 증가, TV 광고 시장 부진, 자회사(티빙, 피프스시즌)의 실적 부진으로 인한 재무적 부담 증가, 경쟁 심화 등이 위험 요인입니다.",
+    "recent_trends": "CJ ENM은 OTT 시장 경쟁 심화 속에서 티빙과 웨이브 합병을 통한 시너지 효과를 기대하며, AI 기술을 콘텐츠 제작 전반에 적용하여 새로운 IP 확보에 집중하고 있지만, 2025년 1분기 영업이익이 94.3% 감소하는 등 상장 자회사 실적 부진으로 어려움을 겪고 있으며, 부채 규모는 5조 원에 달합니다."
+  },
+  "rag_results": {
+    "임직원_수": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "설립일": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "최신_매출": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "최신_영업이익": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "최신_순이익": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "재무_상태": {
+      "data": "정보 없음",
+      "valid": false,
+      "source": "web_crawling",
+      "note": "웹크롤링에서 해당 데이터를 찾을 수 없음"
+    },
+    "대표자": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "업종": {
+      "data": "CJ엔터테인먼트는 현재 CJ ENM으로 알려져 있으며, 주로 영화, 드라마, 음악, 공연 등 다양한 엔터테인먼트 콘텐츠를 제작 및 배급하는 회사입니다. 따라서 CJ ENM의 주요 업종은 \"엔터테인먼트\"입니다.",
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "기업_요약": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "주요_서비스_제품": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "목표_고객": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "주요_경쟁사": {
+      "data": "CJ엔터테인먼트는 현재 CJ ENM으로 알려져 있으며, 한국의 주요 엔터테인먼트 및 미디어 기업 중 하나입니다. CJ ENM의 주요 경쟁사는 다음과 같습니다:\n\n1. **롯데컬처웍스** - 롯데그룹의 영화 및 엔터테인먼트 부문.\n2. **쇼박스** - 영화 제작 및 배급사.\n3. **NEW (Next Entertainment World)** - 영화 및 드라마 제작사.\n4. **스튜디오드래곤** - 드라마 제작사로, CJ ENM의 자회사이기도 하지만 독립적으로 경쟁력을 갖추고 있습니다.\n5. **넷플릭스** - 글로벌 OTT 플랫폼으로, 콘텐츠 제작 및 배급에서 경쟁.\n\n이 외에도 다양한 글로벌 및 국내 미디어 기업들이 경쟁사로 간주될 수 있습니다. 그러나 특정 시점의 시장 상황에 따라 경쟁사는 변동될 수 있습니다.",
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "강점": {
+      "data": "CJ엔터테인먼트는 현재 CJ ENM의 영화 사업 부문으로 통합되어 운영되고 있습니다. CJ ENM은 한국의 주요 엔터테인먼트 및 미디어 기업 중 하나로, 다양한 강점을 가지고 있습니다. 주요 강점으로는 다음과 같은 것들이 있습니다:\n\n1. **콘텐츠 제작 역량**: CJ ENM은 영화, 드라마, 음악 등 다양한 콘텐츠를 제작하며, 국내외에서 높은 인기를 얻고 있습니다. 특히, 영화 부문에서는 한국 영화의 글로벌화를 선도하고 있습니다.\n\n2. **글로벌 네트워크**: CJ ENM은 해외 시장에서도 활발히 활동하고 있으며, 글로벌 네트워크를 통해 다양한 국가에 콘텐츠를 배급하고 있습니다.\n\n3. **다양한 플랫폼**: TV, 영화, 온라인 스트리밍 등 다양한 플랫폼을 통해 콘텐츠를 제공하며, 이를 통해 다양한 소비자층을 확보하고 있습니다.\n\n4. **혁신적인 마케팅 전략**: CJ ENM은 혁신적인 마케팅 전략을 통해 콘텐츠의 가치를 극대화하고, 브랜드 인지도를 높이고 있습니다.\n\n이러한 강점들은 CJ ENM이 한국뿐만 아니라 글로벌 엔터테인먼트 시장에서도 경쟁력을 갖추게 하는 요소들입니다.",
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "위험_요인": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    },
+    "최근_동향": {
+      "data": null,
+      "valid": true,
+      "source": "rag_pipeline"
+    }
+  },
+  "summary": {
+    "total_fields_searched": 15,
+    "successful_extractions": 9,
+    "failed_extractions": 6
+  },
+  "extracted_information": {
+    "대표자": null,
+    "업종": "CJ엔터테인먼트는 현재 CJ ENM으로 알려져 있으며, 주로 영화, 드라마, 음악, 공연 등 다양한 엔터테인먼트 콘텐츠를 제작 및 배급하는 회사입니다. 따라서 CJ ENM의 주요 업종은 \"엔터테인먼트\"입니다.",
+    "기업_요약": null,
+    "주요_서비스_제품": null,
+    "목표_고객": null,
+    "주요_경쟁사": "CJ엔터테인먼트는 현재 CJ ENM으로 알려져 있으며, 한국의 주요 엔터테인먼트 및 미디어 기업 중 하나입니다. CJ ENM의 주요 경쟁사는 다음과 같습니다:\n\n1. **롯데컬처웍스** - 롯데그룹의 영화 및 엔터테인먼트 부문.\n2. **쇼박스** - 영화 제작 및 배급사.\n3. **NEW (Next Entertainment World)** - 영화 및 드라마 제작사.\n4. **스튜디오드래곤** - 드라마 제작사로, CJ ENM의 자회사이기도 하지만 독립적으로 경쟁력을 갖추고 있습니다.\n5. **넷플릭스** - 글로벌 OTT 플랫폼으로, 콘텐츠 제작 및 배급에서 경쟁.\n\n이 외에도 다양한 글로벌 및 국내 미디어 기업들이 경쟁사로 간주될 수 있습니다. 그러나 특정 시점의 시장 상황에 따라 경쟁사는 변동될 수 있습니다.",
+    "강점": "CJ엔터테인먼트는 현재 CJ ENM의 영화 사업 부문으로 통합되어 운영되고 있습니다. CJ ENM은 한국의 주요 엔터테인먼트 및 미디어 기업 중 하나로, 다양한 강점을 가지고 있습니다. 주요 강점으로는 다음과 같은 것들이 있습니다:\n\n1. **콘텐츠 제작 역량**: CJ ENM은 영화, 드라마, 음악 등 다양한 콘텐츠를 제작하며, 국내외에서 높은 인기를 얻고 있습니다. 특히, 영화 부문에서는 한국 영화의 글로벌화를 선도하고 있습니다.\n\n2. **글로벌 네트워크**: CJ ENM은 해외 시장에서도 활발히 활동하고 있으며, 글로벌 네트워크를 통해 다양한 국가에 콘텐츠를 배급하고 있습니다.\n\n3. **다양한 플랫폼**: TV, 영화, 온라인 스트리밍 등 다양한 플랫폼을 통해 콘텐츠를 제공하며, 이를 통해 다양한 소비자층을 확보하고 있습니다.\n\n4. **혁신적인 마케팅 전략**: CJ ENM은 혁신적인 마케팅 전략을 통해 콘텐츠의 가치를 극대화하고, 브랜드 인지도를 높이고 있습니다.\n\n이러한 강점들은 CJ ENM이 한국뿐만 아니라 글로벌 엔터테인먼트 시장에서도 경쟁력을 갖추게 하는 요소들입니다.",
+    "위험_요인": null,
+    "최근_동향": null
+  }
+}
