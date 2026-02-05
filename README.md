@@ -2,7 +2,7 @@
 ## (기업 정보 수집 → 정제 → 분석 보고서)
 
 <p align="center">
-  FastAPI · LangChain · RAG · Tavily(Web) · Alembic · (옵션) LangSmith
+  FastAPI · LangChain · RAG · Tavily(Web) · Alembic ·  LangSmith(Option)
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
   <a href="#"><img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-0.11x-009688?logo=fastapi&logoColor=white"></a>
   <a href="#"><img alt="LangChain" src="https://img.shields.io/badge/LangChain-✓-000000"></a>
   <a href="#"><img alt="RAG" src="https://img.shields.io/badge/RAG-Enabled-4B8BBE"></a>
-  <a href="#"><img alt="license" src="https://img.shields.io/badge/License-MIT-555555"></a>
+  <a href="#"><img alt="license" src="https://img.shields.io/badge/License-Personal%20Use%20Only-555555"></a>
 </p>
 
 ---
@@ -24,16 +24,23 @@
 
 ---
 
-## 🧱 데이터 흐름(Architecture)
+## 🧱 데이터 흐름 (Architecture)
 
-1. **웹검색/크롤링**(Tavily 등) → 2) **로딩**(HTML/PDF 텍스트화)
-   → 3) **청크**(256\~512 토큰) → 4) **임베딩 저장**(Vector Store)
-   → 5) **질의**(섹션별 요청) → 6) **검색(RAG)**(근거 청크 조회)
-   → 7) **생성**(LLM **JSON 스키마**에 맞춰 채우기)
-   → 8) **검증/부분 재시도**(필드 단위 재생성)
-   → 9) **출력**(JSON + HTML 보고서) / (선택) **트레이싱**(LangSmith)
+```
 
-**주요 구성**
+  1) **웹검색/크롤링** (Tavily 등) → 2) **로딩** (HTML/PDF 텍스트화) 
+
+→ 3) **청크** (256\~512 토큰) → 4) **임베딩 저장** (Vector Store) 
+
+→ 5) **질의** (섹션별 요청) → 6) **검색(RAG)** (근거 청크 조회) 
+
+→ 7) **생성** (`LLM` **JSON 스키마**에 맞춰 채우기) → 8) **검증/부분 재시도** (필드 단위 재생성) 
+
+→ 9) **출력** (JSON + HTML 보고서) / `옵션` **트레이싱** (LangSmith)
+
+```
+
+### **주요 구성**
 
 * **API**: FastAPI
 * **에이전트**: `IngestAgent`(수집/정제/임베딩), `ReportAgent`(RAG+구조화+검증/재시도)
@@ -42,7 +49,7 @@
 
 ---
 
-## 🗂️ 폴더 구조(제안)
+## 🗂️ 폴더 구조
 
 ```
 a2a/
@@ -119,7 +126,7 @@ GET /api/v1/report/{report_id}
 
 ---
 
-## 🧩 출력 스키마(예시)
+## 🧩 출력 스키마 예시
 
 ```python
 from pydantic import BaseModel
@@ -131,7 +138,7 @@ class CompanyReport(BaseModel):
     products: List[str]
     markets: List[str]
     risks: List[str]
-    citations: List[str]   # 근거 URL 또는 문서 ID
+    citations: List[str]   
 ```
 
 * LLM에 **JSON Schema**를 전달해 **구조화 출력**을 강제합니다.
@@ -139,7 +146,7 @@ class CompanyReport(BaseModel):
 
 ---
 
-## ⚙️ 설치 & 실행(로컬)
+## ⚙️ 설치 & 실행 (로컬)
 
 ```bash
 # 1) 가상환경
@@ -161,22 +168,10 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 ---
 
-## 📏 지표(숫자/기간/샘플 수 추가 예정)
-
-* **필드 정합률**: `__% → __%` (샘플 N, YYYY.MM)
-* **생성 p95 지연**: `__분 → __분`
-* **재시도 성공률**: `__%`
-* **근거 포함률**: `__%` (각 섹션 1개 이상 citation)
-
----
-
 ## 🧭 로드맵
 
 * [x] Vector Store 교체/검증(FAISS → Qdrant/PGVector)
 * [x] **LangGraph** 전환(조건부 흐름/분기 명시)
-* [ ] 품질평가 자동화(고정 샘플셋 + 스코어)
-* [ ] CI: pytest · ruff · mypy · 슬림 도커
-* [ ] 배포: Fly.io/Render/EC2 중 택1 (헬스체크 + 롤백)
 
 ---
 
